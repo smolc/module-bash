@@ -4,13 +4,10 @@ if [ -z $1 ]; then
   exit 1
 fi
 
-if ![ -z $1]; then
+if ! [ -z $1 ]; then
   touch .f
   for i in "${@:2}"
   do
-    if [ $i eq 1 ]; then
-      exit 0
-    fi
     grep -in $i $1 > .f
     n=$(cat .f | wc -l)
     echo "$i $n"
