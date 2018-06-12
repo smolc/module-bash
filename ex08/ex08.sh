@@ -11,8 +11,9 @@ if [ ! -f "$1" ]; then
 fi
 
 answer=""
-words=( zeroes ones twoes threes fours fives sixs sevens nines )
-for (( i=0; i<=8; i++ ))
+words=( zeroes ones twoes threes fours fives sixs sevens eights nines )
+wlen=${#words[@]}
+for (( i=0; i<${wlen}; i++ ))
 do
   answer+=$(grep -o "$i" $1 | wc -l)
   answer+=" ${words[$i]}, "
