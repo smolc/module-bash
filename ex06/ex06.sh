@@ -1,10 +1,11 @@
 #!/bin/bash
 map() {
   arg=$1
+  shift
 	for i in "$@"
 	do
-		shift 1
-		$arg $i
+		shift
+		eval "$arg $i"
 	done
 }
 
